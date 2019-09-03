@@ -1,6 +1,6 @@
 # null_data_source._
 data "null_data_source" "_" {
-  outputs {
+  outputs = {
     exports_file_path = "${var.project_path}/src/aws-exports.js"
     rm_codegen = fileexists("${var.project_path}/src/app/API.service.js") ? "amplify remove codegen ;" : ""
   }
