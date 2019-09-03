@@ -37,6 +37,6 @@ resource "null_resource" "run_codegen" {
     value = uuid()
   }
   provisioner "local-exec" {
-    command = "cd ${var.project_path} ; ${data.null_data_source._.outputs.rm_codegen} echo \"Y Y Y Y Y\" | amplify add codegen --apiId ${var.appsync_graphql_api_id} ; cd ${path.module}"
+    command = "cd ${var.project_path} ; ${data.null_data_source._.outputs.rm_codegen} echo \"Y Y Y Y Y Y\" | amplify add codegen --apiId ${var.appsync_graphql_api_id} ; cd ${path.module}"
   }
 }
