@@ -13,7 +13,7 @@ resource "null_resource" "write_ng_amplify_config" {
       uuid = uuid()
       region = var.appsync_region
       identity_pool_id = var.identiy_pool_id
-      identity_pool_region = var.identity_pool_region ? var.identity_pool_region : var.appsync_region
+      identity_pool_region = var.identity_pool_region != null ? var.identity_pool_region : var.appsync_region
       user_pool_id = var.user_pool_id
       client_id = var.user_pool_client_id
       upload_bucket = var.s3_bucket
