@@ -28,15 +28,15 @@ resource "null_resource" "write_ng_amplify_config" {
   }
 }
 
-# null_resource.run_codegen
-resource "null_resource" "run_codegen" {
-  depends_on = [
-    "null_resource.write_ng_amplify_config"
-  ]
-  triggers = {
-    value = uuid()
-  }
-  provisioner "local-exec" {
-    command = "cd ${var.project_path} ; ${data.null_data_source._.outputs.rm_codegen} echo \"Y Y Y Y Y Y\" | amplify add codegen --apiId ${var.appsync_graphql_api_id} ; cd ${path.module}"
-  }
-}
+//# null_resource.run_codegen
+//resource "null_resource" "run_codegen" {
+//  depends_on = [
+//    "null_resource.write_ng_amplify_config"
+//  ]
+//  triggers = {
+//    value = uuid()
+//  }
+//  provisioner "local-exec" {
+//    command = "cd ${var.project_path} ; ${data.null_data_source._.outputs.rm_codegen} echo \"Y Y Y Y Y Y\" | amplify add codegen --apiId ${var.appsync_graphql_api_id} ; cd ${path.module}"
+//  }
+//}
