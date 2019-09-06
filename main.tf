@@ -9,7 +9,7 @@ data "null_data_source" "_" {
 # null_resource.write_ng_amplify_config
 resource "null_resource" "write_ng_amplify_config" {
   triggers = {
-    value = templatefile("${path.module}/aws-exports.template.js", {
+    value = templatefile("${path.module}/aws-exports.js.tmpl", {
       uuid = uuid()
       region = var.appsync_region
       identity_pool_id = var.identiy_pool_id
