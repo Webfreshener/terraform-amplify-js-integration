@@ -44,3 +44,9 @@ variable "account_id" {
   description = "AWS Account ID"
   type = "string"
 }
+
+variable "API" {
+  description = "AWS Account ID"
+  type = "string"
+  default = ""
+}

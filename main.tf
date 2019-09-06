@@ -19,6 +19,7 @@ resource "null_resource" "write_ng_amplify_config" {
       upload_bucket = var.s3_bucket
       graphql_endpoint = var.graphql_endpoint
       account_id = var.account_id
+      API = var.API
     })
   }
   depends_on = [

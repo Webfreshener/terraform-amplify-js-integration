@@ -23,6 +23,11 @@ const awsmobile = {
         "region": "\"${region}\"",
         "authenticationType": "\"AMAZON_COGNITO_USER_POOLS\""
     },
+    %{ if API != "" }
+        "API": {
+            ${API}
+        }
+    %{ endif }
     "default": {
         "Auth": {
             "identityPoolId": "\"${identity_pool_id}\"",
