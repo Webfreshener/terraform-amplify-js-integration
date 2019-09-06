@@ -23,11 +23,11 @@ const awsmobile = {
         "region": "\"${region}\"",
         "authenticationType": "\"AMAZON_COGNITO_USER_POOLS\""
     },
-    %{ if API != "" }
-        "API": {
-            ${API}
-        }
-    %{ endif }
+%{ if API != "" }
+    "API": {
+        ${API}
+    },
+%{ endif }
     "default": {
         "Auth": {
             "identityPoolId": "\"${identity_pool_id}\"",
@@ -42,6 +42,11 @@ const awsmobile = {
             "region": "\"${region}\"",
             "identityPoolId": "\"${identity_pool_id}\""
         },
+%{ if API != "" }
+    "API": {
+        ${API}
+    },
+%{ endif }
         "aws_appsync_graphqlEndpoint": "\"${graphql_endpoint}\"",
         "aws_appsync_region": "\"${region}\"",
         "aws_appsync_authenticationType": "\"AMAZON_COGNITO_USER_POOLS\""
